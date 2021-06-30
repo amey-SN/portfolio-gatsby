@@ -60,23 +60,23 @@ export const footerData = {
   networks: [
     {
       id: nanoid(),
-      name: 'twitter',
-      url: '',
+      name: 'instagram',
+      url: 'https://www.instagram.com/amey_nagmode/',
     },
     {
       id: nanoid(),
-      name: 'codepen',
-      url: '',
+      name: 'code',
+      url: 'https://www.codechef.com/users/ameysn',
     },
     {
       id: nanoid(),
       name: 'linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/amey-nagmode/',
     },
     {
       id: nanoid(),
       name: 'github',
-      url: '',
+      url: 'https://github.com/amey-SN',
     },
   ],
 };
