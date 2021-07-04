@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
+// import Navbar from '../Navbar/Navbar';
 
 
 const Header = () => {
@@ -25,6 +26,7 @@ const Header = () => {
   return (
     <section id="hero" className="jumbotron">
       <Container>
+        {/* <Navbar/> */}
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
           <h1 className="hero-title">
             {title || 'Hi, my name is'}{' '}

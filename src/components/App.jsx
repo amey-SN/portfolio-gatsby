@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import Hero from './Hero/Hero';
-import About from './About/About';
-import Projects from './Projects/Projects';
-import Contact from './Contact/Contact';
+import { BrowserRouter as BRouter, Route, Switch } from "react-router-dom";
+import { createMemoryHistory } from 'history';
+import Home from './Home';
 import Footer from './Footer/Footer';
-import Skills from './skills/Skills.jsx';
+import Navbar from './Navbar/Navbar';
+import BlogPost from './BlogPost/BlogPost';
 
 import { PortfolioProvider } from '../context/context';
 
 import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
+
+const history = createMemoryHistory();
 
 function App() {
   const [hero, setHero] = useState({});
@@ -26,14 +28,21 @@ function App() {
   }, []);
 
   return (
-    <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
-    </PortfolioProvider>
+    <div>
+      <BRouter history={history}>
+        <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
+          <Navbar />
+          <Switch>
+          <Route path="/" exact component={() => <Home />} />
+          {/* <Home/> */}
+          <Route path="/blog" exact component={() => <BlogPost />} />
+          {/* <BlogPost/> */}
+          </Switch>
+          <Footer />
+        </PortfolioProvider>
+        </BRouter>
+  
+    </div>
   );
 }
 
